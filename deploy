@@ -1,0 +1,5 @@
+echo "WEBPACKING"
+webpack
+echo "SCPING"
+scp bundle.js aaron@185.3.94.158:/var/www/html
+scp index.html aaron@185.3.94.158:/var/www/html
