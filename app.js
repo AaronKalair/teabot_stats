@@ -11,6 +11,7 @@ let store = createStore(MainReducer)
 render(
     <Provider store={store}>
         <WidgetContainer />
+        <TeapotStatusContainer />
     </Provider>,
     document.getElementById('root')
 )
@@ -26,3 +27,15 @@ const fetchNumberOfNewPots = () => {
 }
 fetchNumberOfNewPots()
 setInterval(fetchNumberOfNewPots, 60000)
+
+const fetchTeapotStatus = () => {
+    jQuery.ajax({
+        method: "GET",
+        url: "/teabotWebhook"
+    }).done(function( msg ) {
+        store.dispatch({type: 'GET_TEAPOT_STATUS', statusOfTeapot: msg.text})
+    });
+}
+
+fetchTeapotStatus()
+setInterval(fetchTeapotStatus, 30000)
