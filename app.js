@@ -46,3 +46,15 @@ jQuery.ajax({
 }).done(function( msg ) {
     store.dispatch({type: 'SET_POT_MAKERS', potMakers: msg.potMakers})
 });
+
+const fetchTeapotAge = () => {
+    jQuery.ajax({
+        method: "GET",
+        url: "/teapotAge"
+    }).done(function( msg ) {
+        store.dispatch({type: 'SET_TEAPOT_AGE', statusOfTeapot: msg.teapotAge})
+    });
+}
+
+fetchTeapotAge()
+setInterval(fetchTeapotAge, 30000)
