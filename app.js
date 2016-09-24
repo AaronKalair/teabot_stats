@@ -52,7 +52,7 @@ const fetchTeapotAge = () => {
         method: "GET",
         url: "/teapotAge"
     }).done(function( msg ) {
-        store.dispatch({type: 'SET_TEAPOT_AGE', statusOfTeapot: msg.teapotAge})
+        store.dispatch({type: 'SET_TEAPOT_AGE', teapotAge: msg.teapotAge})
     });
 }
 
