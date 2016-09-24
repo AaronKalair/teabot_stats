@@ -38,3 +38,11 @@ const fetchTeapotStatus = () => {
 
 fetchTeapotStatus()
 setInterval(fetchTeapotStatus, 30000)
+
+
+jQuery.ajax({
+    method: "GET",
+    url: "/potMakers"
+}).done(function( msg ) {
+    store.dispatch({type: 'SET_POT_MAKERS', potMakers: msg.potMakers})
+});
