@@ -2,7 +2,7 @@ const PotMakers = (state = {'makers': [{'name':"Aaron", 'numberOfPotsMade': 7, '
     switch (action.type) {
         case 'SET_POT_MAKERS':
             return Object.assign({}, state, {
-                makers: action.potMakers
+                makers: action.potMakers.sort((a, b) => b.numberOfPotsMade - a.numberOfPotsMade)
             });
         case 'SET_SUBMIT_MESSAGE':
             return Object.assign({}, state, {
