@@ -10,7 +10,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         hideSubmitMessage: () => {dispatch({type: 'HIDE_SUBMIT_MESSAGE'})},
-        setSubmitMessage: (message) => {dispatch({type: 'SET_SUBMIT_MESSAGE', message: message})}
+        setSubmitMessage: (message) => {dispatch({type: 'SET_SUBMIT_MESSAGE', message: message})},
+        setPotMakers: (makers) => {dispatch({type: 'SET_POT_MAKERS', potMakers: makers})}
     }
 }
 

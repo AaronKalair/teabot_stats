@@ -15,6 +15,7 @@ const PotClaimWidget = React.createClass({
         submitMessage: PropTypes.string,
         hideSubmitMessage: PropTypes.func.isRequired,
         setSubmitMessage: PropTypes.func.isRequired,
+        setPotMakers: PropTypes.func.isRequired
     },
 
     onSubmit: function() {
@@ -25,6 +26,12 @@ const PotClaimWidget = React.createClass({
             contentType: 'application/json'
         }).done(function( msg ) {
             this.props.setSubmitMessage(msg.submitMessage);
+        }.bind(this));
+        jQuery.ajax({
+            method: "GET",
+            url: "/potMakers"
+        }).done(function( msg ) {
+            this.props.setPotMakers(msg.potMakers)
         }.bind(this));
     },
 
