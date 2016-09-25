@@ -3,6 +3,7 @@ import TotalNumberOfTeapotsContainer from '../containers/TotalNumberOfTeapotsCon
 import TeapotStatusWidgetContainer from '../containers/TeapotStatusWidgetContainer'
 import PotClaimWidgetContainer from '../containers/PotClaimWidgetContainer'
 import TeapotAgeWidgetContainer from '../containers/TeapotAgeWidgetContainer'
+import LeaderboardWidgetContainer from '../containers/LeaderboardWidgetContainer'
 
 const WidgetHolder = () => (
     <div>
@@ -10,6 +11,7 @@ const WidgetHolder = () => (
         <TeapotStatusWidgetContainer />
         <TeapotAgeWidgetContainer />
         <PotClaimWidgetContainer />
+        <LeaderboardWidgetContainer />
     </div>
 )
 

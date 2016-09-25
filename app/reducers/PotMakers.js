@@ -1,7 +1,9 @@
-const PotMakers = (state = {'makers': [{'name':"Aaron"}]}, action) => {
+const PotMakers = (state = {'makers': [{'name':"Aaron", 'numberOfPotsMade': 7, 'totalWeightMade': 89, 'numberOfCupsMade': 23, 'largestSinglePot': 98}]}, action) => {
     switch (action.type) {
         case 'SET_POT_MAKERS':
-            return {'makers': action.potMakers}
+            return Object.assign({}, state, {
+                makers: action.potMakers
+            });
         case 'SET_SUBMIT_MESSAGE':
             return Object.assign({}, state, {
                 submitMessage: action.message
