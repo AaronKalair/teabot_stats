@@ -1,25 +1,62 @@
 <html>
     <head>
         <title>Teabot Stats</title>
+        <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto">
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     </head>
     <style>
-        td, th {padding: 5px; text-align: center;}
+        body {
+        font-family: 'Roboto', serif;
+      }
+
+    .top-card-row {
+        margin-top: 7%;
+        margin-bottom: 2%;
+      }
+
+    .card-margin {
+        margin-right: 1%;
+        margin-left: 1%;
+        width: 50%;
+    }
+
+    .large-card {
+        width: 98%;
+        margin-top: 2%;
+        margin-left: 1%;
+    }
+
+
+    .flex-parent {
+        display: flex;
+      }
+
+    .scrollable {
+        margin: 0;
+        z-index: 2;
+        position: fixed;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+      }
+
+    .scrollable-float-action {
+        margin: 0;
+        z-index: 3;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+      }
+
+    .card-font-size {
+        font-size: large;
+    }
     </style>
     <body>
-            <div class="container-fluid">
-                <div id="root" class="row text-center"></div>
-            </div>
-        </div>
+        <div id="root" />
     </body>
 </html>
 <script src="bundle.js"></script>
