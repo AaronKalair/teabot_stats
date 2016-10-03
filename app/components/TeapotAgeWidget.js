@@ -11,7 +11,7 @@ const TeapotAge = ({ teapotAge }) => (
       			{parseInt(teapotAge)} minutes old
       		</CardText>
         </Card>
-    <div>
+    </div>
 )
 
 TeapotAge.propTypes = {
