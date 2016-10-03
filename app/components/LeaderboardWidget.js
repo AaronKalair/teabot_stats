@@ -20,6 +20,9 @@ const LeaderboardWidget = ({ potMakers }) => (
               </TableRow>
                 {
                   potMakers.map(function(maker) {
+                    if(maker.numberOfPotsMade == 0) {
+                        return
+                    }
                     return <TableRow key={maker.name} displayRowCheckbox={false} selectable={false}>
                         <TableRowColumn>{maker.name}</TableRowColumn>
                         <TableRowColumn>{maker.numberOfPotsMade}</TableRowColumn>
