@@ -8,7 +8,7 @@ const LeaderboardWidget = ({ potMakers }) => (
         <Card>
             <CardHeader
                 title="Leaderboard"
-                avatar="kettle.gif" />
+                avatar="robot.jpg" />
             <Table style={{'margin-right':'auto', 'margin-left': 'auto'}}>
             <TableBody displayRowCheckbox={false} selectable={false}>
               <TableRow displayRowCheckbox={false} selectable={false}>

@@ -6,7 +6,7 @@ const TotalNumberOfTeapots = ({ numberOfTeapots }) => (
     	<Card>
     		<CardHeader
       			title="Number of Teapots"
-      			avatar="kettle.gif" />
+      			avatar="robot.jpg" />
       		<CardText>
       			{numberOfTeapots}
       		</CardText>
