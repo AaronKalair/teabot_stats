@@ -136,12 +136,7 @@ const PotClaimWidget = React.createClass({
     },
 
     render: function() {
-        if (this.props.submitMessage) {
-            return this.renderServerReply()
-        }
-        else {
-            return this.renderForm()
-        }
+        return this.renderForm()
     }
 })
 
