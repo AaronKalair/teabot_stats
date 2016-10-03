@@ -1,9 +1,16 @@
 import React, { PropTypes } from 'react';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 const TotalNumberOfTeapots = ({ numberOfTeapots }) => (
-    <div>
-        <h1> Total Number of Teapots Made </h1>
-        <h2> {numberOfTeapots} </h2>
+    <div className='card-margin'>
+    	<Card>
+    		<CardHeader
+      			title="Number of Teapots"
+      			avatar="kettle.gif" />
+      		<CardText>
+      			{numberOfTeapots}
+      		</CardText>
+        </Card>
     </div>
 )
 

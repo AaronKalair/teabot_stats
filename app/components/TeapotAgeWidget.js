@@ -1,8 +1,17 @@
 import React, { PropTypes } from 'react';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 const TeapotAge = ({ teapotAge }) => (
-    <div>
-        <h2> {teapotAge} minutes old </h2>
+
+    <div className='large-card'>
+    	<Card>
+    		<CardHeader
+      			title="Age of Teapot"
+      			avatar="kettle.gif" />
+      		<CardText>
+      			{teapotAge} minutes old
+      		</CardText>
+        </Card>
     </div>
 )
 

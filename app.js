@@ -5,14 +5,28 @@ import { createStore } from 'redux';
 import WidgetHolder from './app/components/WidgetHolder';
 import MainReducer from './app/reducers';
 import jQuery from 'jquery';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
+
+// Needed for onTouchTap
+// http://stackoverflow.com/a/34015469/988941
+injectTapEventPlugin();
 
 let store = createStore(MainReducer)
 
+const App = () => (
+    <MuiThemeProvider>
+        <Provider store={store}>
+            <WidgetHolder />
+        </Provider>
+    </MuiThemeProvider>
+    )
+
 render(
-    <Provider store={store}>
-        <WidgetHolder />
-    </Provider>,
-    document.getElementById('root')
+    <App/>,
+  document.getElementById('root')
 )
 
 

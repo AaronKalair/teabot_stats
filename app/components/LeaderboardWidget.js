@@ -1,31 +1,39 @@
 import React, { PropTypes } from 'react';
+import AppBar from 'material-ui/AppBar';
+import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 const LeaderboardWidget = ({ potMakers }) => (
-    <div>
-        <h1> Leaderboard </h1>
-        <table style={{'margin-right':'auto', 'margin-left': 'auto'}}>
-        <tbody>
-          <tr>
-            <th>Who</th>
-            <th># of Pots</th>
-            <th>Total Weight</th>
-            <th># of Cups</th>
-            <th>Heaviest Pot</th>
-          </tr>
-            {
-              potMakers.map(function(maker) {
-                return <tr key={maker.name}>
-                    <td>{maker.name}</td>
-                    <td>{maker.numberOfPotsMade}</td>
-                    <td>{maker.totalWeightMade}</td>
-                    <td>{maker.numberOfCupsMade}</td>
-                    <td>{maker.largestSinglePot}</td>
-                </tr>
-              })
-            }
-        </tbody>
-        </table>
+    <div className='large-card' >
+        <Card>
+            <CardHeader
+                title="Leaderboard"
+                avatar="kettle.gif" />
+            <Table style={{'margin-right':'auto', 'margin-left': 'auto'}}>
+            <TableBody displayRowCheckbox={false} selectable={false}>
+              <TableRow displayRowCheckbox={false} selectable={false}>
+                <TableHeaderColumn>Who</TableHeaderColumn>
+                <TableHeaderColumn># of Pots</TableHeaderColumn>
+                <TableHeaderColumn>Total Weight</TableHeaderColumn>
+                <TableHeaderColumn># of Cups</TableHeaderColumn>
+                <TableHeaderColumn>Heaviest Pot</TableHeaderColumn>
+              </TableRow>
+                {
+                  potMakers.map(function(maker) {
+                    return <TableRow key={maker.name} displayRowCheckbox={false} selectable={false}>
+                        <TableRowColumn>{maker.name}</TableRowColumn>
+                        <TableRowColumn>{maker.numberOfPotsMade}</TableRowColumn>
+                        <TableRowColumn>{maker.totalWeightMade}</TableRowColumn>
+                        <TableRowColumn>{maker.numberOfCupsMade}</TableRowColumn>
+                        <TableRowColumn>{maker.largestSinglePot}</TableRowColumn>
+                    </TableRow>
+                  })
+                }
+            </TableBody>
+            </Table>
+        </Card>
     </div>
+    
 )
 
 LeaderboardWidget.propTypes = {
