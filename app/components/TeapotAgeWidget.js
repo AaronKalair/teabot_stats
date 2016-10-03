@@ -6,7 +6,7 @@ const TeapotAge = ({ teapotAge }) => (
     	<Card>
     		<CardHeader
       			title="Age of Teapot"
-      			avatar="kettle.gif" />
+      			avatar="robot.jpg" />
       		<CardText>
       			{parseInt(teapotAge)} minutes old
       		</CardText>

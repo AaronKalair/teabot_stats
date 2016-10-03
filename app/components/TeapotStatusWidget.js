@@ -6,7 +6,7 @@ const TeapotStatusWidget = ({ teapotStatus }) => (
     	<Card>
     		<CardHeader
       			title="Number of Cups in Teapot"
-      			avatar="kettle.gif" />
+      			avatar="robot.jpg" />
       		<CardText>
       			{teapotStatus}
       		</CardText>
