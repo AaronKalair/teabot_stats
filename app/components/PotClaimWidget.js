@@ -119,7 +119,7 @@ const PotClaimWidget = React.createClass({
 
                     <Snackbar
                         open={this.state.snackbaropen}
-                        message="Teapot Claimed"
+                        message={this.props.submitMessage}
                         autoHideDuration={4000}
                         onRequestClose={this.handleCloseSnackBar}
                     />
