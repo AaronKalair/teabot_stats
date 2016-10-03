@@ -11,6 +11,7 @@ import FontIcon from 'material-ui/FontIcon';
 import SvgIconFace from 'material-ui/svg-icons/action/face';
 import {blue300, indigo900} from 'material-ui/styles/colors';
 import Avatar from 'material-ui/Avatar';
+import Snackbar from 'material-ui/Snackbar';
 
 const PotClaimWidget = React.createClass({
 
@@ -21,16 +22,24 @@ const PotClaimWidget = React.createClass({
     handleChange: function(name) {
         this.setState({
             potMaker: name,
-            open: false});
+            open: false,
+            snackbaropen: true});
         this.onSubmit(name)
     },
 
     handleOpen: function()  {
-        this.setState({open: true});
+        this.setState({
+            open: true});
     },
 
     handleClose: function()  {
-        this.setState({open: false});
+        this.setState({
+            open: false});
+    },
+
+    handleCloseSnackBar: function()  {
+        this.setState({
+            snackbaropen: false});
     },
 
     getMakerchips: function() {
@@ -107,6 +116,13 @@ const PotClaimWidget = React.createClass({
                     onRequestClose={this.handleClose} >
                     {this.getMakerchips()}
                     </Dialog>
+
+                    <Snackbar
+                        open={this.state.snackbaropen}
+                        message="Teapot Claimed"
+                        autoHideDuration={4000}
+                        onRequestClose={this.handleCloseSnackBar}
+                    />
                 </div>
             </div>
         )
