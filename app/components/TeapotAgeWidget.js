@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 const TeapotAge = ({ teapotAge }) => (
     <div>
-        <h2> {teapotAge} minutes old </h2>
+        <h2> {parseInt(teapotAge)} minutes old </h2>
     </div>
 )
 
