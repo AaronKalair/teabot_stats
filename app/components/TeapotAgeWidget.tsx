@@ -1,14 +1,20 @@
 import React, { PropTypes } from 'react';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {Card, CardHeader, CardText} from 'material-ui/Card';
 
-const TeapotAge = ({ teapotAge }) => (
+
+interface TeapotAgeProps {
+    teapotAge: number;
+};
+
+
+const TeapotAge: React.StatelessComponent<TeapotAgeProps> = ({teapotAge}) => (
     <div className='large-card'>
     	<Card>
     		<CardHeader
       			title="Age of Teapot"
       			avatar="robot.jpg" />
       		<CardText>
-      			{parseInt(teapotAge)} minutes old
+      			{Math.round(teapotAge)} minutes old
       		</CardText>
         </Card>
     </div>
@@ -16,6 +22,6 @@ const TeapotAge = ({ teapotAge }) => (
 
 TeapotAge.propTypes = {
     teapotAge: PropTypes.number.isRequired
-}
+};
 
-export default TeapotAge
+export default TeapotAge;
