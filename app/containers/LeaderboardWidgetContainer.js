@@ -3,13 +3,13 @@ import LeaderboardWidget from '../components/LeaderboardWidget';
 
 const mapStateToProps = (state) => {
     return {
-        potMakers: state.potMakers.makers,
-    }
-}
+        potMakers: state.potMakers.makers
+    };
+};
 
 const LeaderboardWidgetContainer = connect(
     mapStateToProps,
     null
-)(LeaderboardWidget)
+)(LeaderboardWidget);
 
-export default LeaderboardWidgetContainer
+export default LeaderboardWidgetContainer;

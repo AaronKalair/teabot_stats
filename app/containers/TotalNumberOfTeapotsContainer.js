@@ -3,13 +3,13 @@ import TotalNumberOfTeapots from '../components/TotalNumberOfTeapots';
 
 const mapStateToProps = (state) => {
     return {
-        numberOfTeapots: state.numberOfTeapots,
-    }
-}
+        numberOfTeapots: state.numberOfTeapots
+    };
+};
 
 const TotalNumberOfTeapotsContainer = connect(
     mapStateToProps,
     null
-)(TotalNumberOfTeapots)
+)(TotalNumberOfTeapots);
 
-export default TotalNumberOfTeapotsContainer
+export default TotalNumberOfTeapotsContainer;
