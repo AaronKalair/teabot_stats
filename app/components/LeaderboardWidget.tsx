@@ -1,6 +1,6 @@
-import React, { PropTypes } from 'react';
-import {Table, TableBody, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
-import {Card, CardHeader } from 'material-ui/Card';
+import React, { PropTypes } from "react";
+import {Table, TableBody, TableHeaderColumn, TableRow, TableRowColumn} from "material-ui/Table";
+import {Card, CardHeader } from "material-ui/Card";
 
 interface PotMaker {
     name: string;
@@ -21,7 +21,7 @@ const LeaderboardWidget: React.StatelessComponent<LeaderboardWidgetProps> = ({ p
             <CardHeader
                 title="Leaderboard"
                 avatar="robot.jpg" />
-            <Table style={{'margin-right':'auto', 'margin-left': 'auto'}}>
+            <Table style={{"margin-right":"auto", "margin-left": "auto"}}>
             <TableBody displayRowCheckbox={false} selectable={false}>
               <TableRow selectable={false}>
                 <TableHeaderColumn>Who</TableHeaderColumn>

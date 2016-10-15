@@ -1,12 +1,12 @@
-import React, { PropTypes } from 'react';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
-import ContentAdd from 'material-ui/svg-icons/content/add';
-import Dialog from 'material-ui/Dialog';
-import Chip from 'material-ui/Chip';
-import {indigo900} from 'material-ui/styles/colors';
-import Avatar from 'material-ui/Avatar';
-import Snackbar from 'material-ui/Snackbar';
-import jQuery from 'jquery';
+import React, { PropTypes } from "react";
+import FloatingActionButton from "material-ui/FloatingActionButton";
+import ContentAdd from "material-ui/svg-icons/content/add";
+import Dialog from "material-ui/Dialog";
+import Chip from "material-ui/Chip";
+import {indigo900} from "material-ui/styles/colors";
+import Avatar from "material-ui/Avatar";
+import Snackbar from "material-ui/Snackbar";
+import jQuery from "jquery";
 
 
 interface SubmitMessage {
@@ -20,7 +20,7 @@ interface PotMaker {
     largestSinglePot: number;
 };
 interface PotMakerResponse {
-    potMakers: Array<PotMaker>
+    potMakers: Array<PotMaker>;
 };
 
 const PotClaimWidget = React.createClass({
@@ -67,10 +67,10 @@ const PotClaimWidget = React.createClass({
     styles: {
         chip: {
             margin: 4,
-            float: 'left'
+            float: "left"
         },
         wrapper: {
-            display: 'flex'
+            display: "flex"
         }
     },
 
@@ -84,16 +84,16 @@ const PotClaimWidget = React.createClass({
 
     onSubmit: function(name: string) {
         jQuery.ajax({
-            method: 'POST',
-            url: '/claimPot',
-            data: JSON.stringify({'potMaker': name}),
-            contentType: 'application/json'
+            method: "POST",
+            url: "/claimPot",
+            data: JSON.stringify({"potMaker": name}),
+            contentType: "application/json"
         }).done(function(msg: SubmitMessage) {
             this.props.setSubmitMessage(msg.submitMessage);
         }.bind(this));
         jQuery.ajax({
-            method: 'GET',
-            url: '/potMakers'
+            method: "GET",
+            url: "/potMakers"
         }).done(function( msg: PotMakerResponse ) {
             this.props.setPotMakers(msg.potMakers);
         }.bind(this));
