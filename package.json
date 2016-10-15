@@ -27,11 +27,12 @@
   },
   "devDependencies": {
     "source-map-loader": "^0.1.5",
-    "ts-loader": "^0.8.2"
+    "ts-loader": "^0.8.2",
+    "tslint": "^3.15.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
-    "lint": "./node_modules/eslint/bin/eslint.js -c eslintrc.json app/"
+    "lint": "./node_modules/eslint/bin/eslint.js -c eslintrc.json app/ && ./node_modules/tslint/bin/tslint  app/*/*.ts{,x}"
   },
   "repository": {
     "type": "git",

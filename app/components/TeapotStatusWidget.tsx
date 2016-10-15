@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react';
-import {Card,  CardHeader, CardText} from 'material-ui/Card';
+import React, { PropTypes } from "react";
+import {Card,  CardHeader, CardText} from "material-ui/Card";
 
 interface TeapotStatusProps {
     teapotStatus: string;
