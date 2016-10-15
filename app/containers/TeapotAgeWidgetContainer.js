@@ -4,12 +4,12 @@ import TeapotAgeWidget from '../components/TeapotAgeWidget';
 const mapStateToProps = (state) => {
     return {
         teapotAge: state.teapotAge
-    }
-}
+    };
+};
 
 const TeapotAgeWidgetContainer = connect(
     mapStateToProps,
     null
-)(TeapotAgeWidget)
+)(TeapotAgeWidget);
 
-export default TeapotAgeWidgetContainer
+export default TeapotAgeWidgetContainer;

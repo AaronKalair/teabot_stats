@@ -1,4 +1,16 @@
-const PotMakers = (state = {'makers': [{'name':"Aaron", 'numberOfPotsMade': 7, 'totalWeightMade': 89, 'numberOfCupsMade': 23, 'largestSinglePot': 98}]}, action) => {
+const defaultState = {
+    'makers': [
+        {
+            'name': 'Aaron',
+            'numberOfPotsMade': 7,
+            'totalWeightMade': 89,
+            'numberOfCupsMade': 23,
+            'largestSinglePot': 98
+        }
+    ]
+};
+
+const PotMakers = (state = defaultState, action) => {
     switch (action.type) {
         case 'SET_POT_MAKERS':
             return Object.assign({}, state, {
