@@ -1,0 +1,251 @@
+{
+    "parser": "babel-eslint",
+
+    "ecmaFeatures": {
+        "jsx": true
+    },
+
+    /*
+    * Environment defines global variables that are predefined.
+    * E.g. "es6", "jasmine", "jest".
+    * See: http://eslint.org/docs/user-guide/configuring
+    * #specifying-environments
+    */
+    "env": {
+        "es6": true
+    },
+
+    "plugins": [
+        "react"
+    ],
+
+    "globals": {
+        "alert": false,             // Disallow overwriting.
+        "console": false,
+        "exports": false,
+        "fetch": false,
+        "global": false,
+        "require": false,
+        "setTimeout": false,
+        "clearTimeout": false,
+        "document": false,
+        "module": false,
+        "window": true,
+
+        // Jest testing.
+        "jest": false,
+        "describe": false,
+        "it": false,
+        "before": false,
+        "beforeEach": false,
+        "after": false,
+        "afterEach": false,
+        "expect": false
+    },
+
+  /*
+   * Rules can be set to 0 ("off"), 1 ("warn") or 2 ("error").
+   * See: http://eslint.org/docs/rules/
+   */
+    "rules": {
+        "indent": [                 // Enforce 4-space indent.
+            2, 4, {"SwitchCase": 1}
+        ],
+        "comma-dangle": 1,          // Disallow trailing commas in object
+                                    // literals.
+        "no-cond-assign": 1,        // Disallow assignment in conditional
+                                    // expressions.
+        "no-console": 0,            // Disallow console use.
+        "no-constant-condition": 0, // Disallow constant exprs in conditions.
+        "no-control-regex": 1,      // Disallow control chars in regex.
+        "no-debugger": 1,           // Disallow use of debugger.
+        "no-dupe-keys": 1,          // Disallow duplicate keys in object
+                                    // literals.
+        "no-empty": 0,              // Disallow empty statements.
+        "no-ex-assign": 1,          // Disallow assign to exception in catch
+                                    // block.
+        "no-extra-parens": 0,       // Disallow unnecessary parentheses.
+        "no-extra-semi": 1,         // Disallow unnecessary semicolons.
+        "no-func-assign": 1,        // Disallow overwriting functions written
+                                    // as function declarations
+        "no-inner-declarations": 0, // Disallow function declarations in nested
+                                    // blocks.
+        "no-invalid-regexp": 1,     // Disallow invalid regex strings in RegExp
+                                    // constructor.
+        "no-negated-in-lhs": 1,     // Disallow negation of left operand in
+                                    // `in` expr.
+        "no-regex-spaces": 1,       // Disallow multiple spaces in regex
+                                    // literal.
+        "no-sparse-arrays": 1,      // Disallow sparse arrays.
+        "no-unreachable": 1,        // Disallow unreachable statements after
+                                    // return, throw, continue, or break
+                                    // statement.
+        "use-isnan": 1,             // Disallow comparisons with the value NaN
+        "valid-jsdoc": 0,           // Ensure JSDoc comments are valid.
+        "valid-typeof": 1,          // Ensure that results of typeof are
+                                    // compared against valid string.
+
+        /*
+         * Best practices to help prevent making mistakes.
+         */
+        "block-scoped-var": 0,      // Treat var statements as if they were
+                                    // block scoped.
+        "complexity": 0,            // Specify max cyclomatic complexity
+                                    // allowed in program.
+        "consistent-return": 0,     // Require return statements to either
+                                    // always or never specify values.
+        "curly": 1,                 // Enforce curly braces for blocks.
+        "default-case": 0,          // Require default case in switch
+                                    // statements.
+        "dot-notation": 1,          // Encourages use of dot notation.
+        "eqeqeq": [                 // Require use of === and !==.
+            1, "allow-null"
+        ],
+        "no-alert": 1,              // Disallow use of alert, confirm and
+                                    // prompt.
+        "no-caller": 1,             // Disallow use of arguments.caller/callee.
+        "no-div-regex": 1,          // Disallow division operators explicitly
+                                    // at beginning of regular expression.
+        "no-else-return": 0,        // Disallow else after a return in an if.
+        "no-eq-null": 0,            // Disallow comparisons to null without a
+                                    // type-checking operator.
+        "no-eval": 1,               // Disallow use of dangerous eval().
+        "no-extend-native": 1,      // Disallow adding to native types.
+        "no-extra-bind": 1,         // Disallow unnecessary function binding.
+        "no-fallthrough": 1,        // Disallow fallthrough of case statements.
+        "no-implied-eval": 1,       // Disallow use of eval()-like methods.
+        "no-labels": 1,             // Disallow use of labeled statements.
+        "no-iterator": 1,           // Disallow usage of __iterator__ property.
+        "no-lone-blocks": 1,        // Disallow unnecessary nested blocks.
+        "no-loop-func": 0,          // Disallow creating functions w/in loops.
+        "no-multi-str": 0,          // Disallow use of multiline strings.
+        "no-native-reassign": 0,    // Disallow reassign of native objects.
+        "no-new": 1,                // Disallow use of new operator when not
+                                    // part of assignment or comparison.
+        "no-new-func": 1,           // Disallow use of new operator for
+                                    // Function object.
+        "no-new-wrappers": 1,       // Disallows creating new instances of
+                                    // String, Number, and Boolean.
+        "no-octal": 1,              // Disallow use of octal literals.
+        "no-octal-escape": 1,       // Disallow use of octal escape sequences
+                                    // in string literals.
+        "no-proto": 1,              // Disallow usage of __proto__ property.
+        "no-redeclare": 0,          // Disallow declaring the same variable
+                                    // more then once.
+        "no-return-assign": 1,      // Disallow assignment in return statement.
+        "no-self-compare": 1,       // Disallow comparisons where both sides
+                                    // are exactly the same.
+        "no-sequences": 1,          // Disallow use of comma operator.
+        "no-unused-expressions": 0, // Disallow unused expressions.
+        "no-with": 1,               // Disallow use of 'with' statement.
+        "radix": 1,                 // Require second argument for parseInt().
+        "semi-spacing": 1,          // Require a space after a semi-colon.
+        "wrap-iife": 0,             // Require immediate function invocation
+                                    // to be wrapped in parentheses.
+        "yoda": [                   // Require or disallow Yoda conditions.
+            1, "never", { "exceptRange": true }
+        ],
+
+        /**
+         * Variable declarations.
+         */
+        "no-catch-shadow": 1,       // Disallow the catch clause param name
+                                    // being same as variable in outer scope.
+        "no-delete-var": 1,         // Disallow deletion of variables.
+        "no-label-var": 1,          // Disallow labels that share name with
+                                    // variable.
+        "no-shadow": 1,             // Disallow declaration of variables.
+                                    // already declared in the outer scope.
+        "no-shadow-restricted-names": 1, // Disallow shadowing of restricted
+                                    // names.
+        "no-undef": 2,              // Disallow use of undeclared variables
+                                    // unless mentioned in a /*global*/ block.
+        "no-undefined": 0,          // Disallow use of undefined variable.
+        "no-undef-init": 1,         // Disallow initializing to undefined.
+        "no-unused-vars": [         // Disallow unused variables.
+            1, {"vars": "all", "args": "none"}
+        ],
+        "no-use-before-define": 0,  // Disallow early use of vars before
+                                    // they are defined.
+
+        /**
+         * Node.js specific rules.
+         */
+        "handle-callback-err": 1,   // Enforce error handling in callbacks.
+        "no-mixed-requires": 1,     // Disallow mixing regular variable and
+                                    // require declarations.
+        "no-new-require": 1,        // Disallow use of new operator with the
+                                    // require function.
+        "no-restricted-modules": 1, // Restrict usage of specific node modules.
+        "no-sync": 0,               // Disallow use of synchronous methods.
+
+        /*
+         * Stylistic Issues.
+         */
+        "key-spacing": 0,           // Enforce property spacing.
+        "keyword-spacing": 1,       // Enforce spacing before / after keywords.
+        "jsx-quotes": [             // Enforce JSX Quote Style.
+            1, "prefer-double"
+        ],
+        "comma-spacing": 1,         // Enforces spacing around commas.
+        "no-multi-spaces": 0,       // Disallow multiple spaces.
+        "camelcase": 1,             // Require camelCase variable names.
+        "eol-last": 1,              // Require file to end with single newline.
+        "new-cap": 0,               // Require constructor to use initial caps.
+        "new-parens": 1,            // Require parens for constructors.
+        "no-array-constructor": 1,  // Disallow use of the Array constructor.
+        "no-new-object": 1,         // Disallow use of the Object constructor.
+        "no-spaced-func": 1,        // Disallow space between name of function
+                                    // and the parentheses that execute it.
+        "no-trailing-spaces": 1,    // Disallow trailing whitespace at end of
+                                    // lines.
+        "no-underscore-dangle": 0,  // Disallow dangling underscores in
+                                    // identifiers.
+        "no-mixed-spaces-and-tabs": 1, // Disallow mixed spaces and tabs
+                                    // for indentation
+        "quotes": [                 // Enforce quote style.
+            1, "single", "avoid-escape"
+        ],
+        "semi": 1,                  // Enforce or disallow semicolons instead
+                                    // of relying on Automatic Semicolon
+                                    // Insertion.
+        "space-in-brackets": 0,     // Require or disallow spaces inside
+                                    // brackets.
+        "space-in-parens": 0,       // Disallow or enforce spaces inside of
+                                    // parentheses.
+        "space-infix-ops": 1,       // Require spaces around infix operators.
+        // Require or disallow spaces before/after unary operators
+        "space-unary-ops": [
+            1, { "words": true, "nonwords": false }
+        ],
+
+        /**
+         * React rules
+         * See: https://github.com/yannickcr/eslint-plugin-react/blob/master/
+         * docs/rules/
+         */
+        "react/display-name": 0,    // Prevent missing 'displayName' in a
+                                    // React component definition.
+        "react/jsx-boolean-value": [ // Enforce bool attrs notation in JSX.
+            1, "always"
+        ],
+        "react/jsx-no-undef": 1,    // Disallow undeclared variables in JSX.
+        "react/jsx-sort-props": 0,  // Enforce props alphabetical sorting.
+        "react/jsx-uses-react": 1,  // Prevent React to be marked unused.
+        "react/jsx-uses-vars": 1,   // Prevent vars used in JSX to be
+                                    // incorrectly marked as unused
+        // Prevent usage of setState in componentDidMount.
+        "react/no-did-mount-set-state": 1,
+        // Prevent usage of setState in componentDidUpdate.
+        "react/no-did-update-set-state": 1,
+        "react/no-multi-comp": 0,   // Prevent multiple component definition
+                                    // per file.
+        "react/prop-types": 1,      // Prevent missing props validation in
+                                    // React component definition.
+        "react/react-in-jsx-scope": 0, // Prevent missing React when using JSX.
+        "react/self-closing-comp": 1, // Prevent extra closing tags for
+                                    // components without children.
+        "react/wrap-multilines": 0 // Prevent missing parentheses around
+                                    // multiline JSX.
+    }
+}
