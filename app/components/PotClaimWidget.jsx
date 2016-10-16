@@ -1,18 +1,18 @@
-import React, { PropTypes } from "react";
-import FloatingActionButton from "material-ui/FloatingActionButton";
-import ContentAdd from "material-ui/svg-icons/content/add";
-import Dialog from "material-ui/Dialog";
-import Chip from "material-ui/Chip";
-import {indigo900} from "material-ui/styles/colors";
-import Avatar from "material-ui/Avatar";
-import Snackbar from "material-ui/Snackbar";
-import jQuery from "jquery";
+import React, { PropTypes } from 'react';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
+import Dialog from 'material-ui/Dialog';
+import Chip from 'material-ui/Chip';
+import {indigo900} from 'material-ui/styles/colors';
+import Avatar from 'material-ui/Avatar';
+import Snackbar from 'material-ui/Snackbar';
+import jQuery from 'jquery';
 
 
 const PotClaimWidget = React.createClass({
 
     getInitialState: function() {
-        return {};
+        return {open: false};
     },
 
     handleChange: function(name) {
@@ -42,7 +42,7 @@ const PotClaimWidget = React.createClass({
         // TODO: Type this currentlly errors out
         const chips = [];
         for (let maker of this.props.potMakers) {
-            chips.push(<Chip style={this.styles.chip}onTouchTap={() => this.handleChange(maker.name)}>
+            chips.push(<Chip key={maker.name} style={this.styles.chip} onTouchTap={() => this.handleChange(maker.name)}>
                 <Avatar backgroundColor={indigo900} size={32}>{maker.name.substring(0, 1)}</Avatar>
                 {maker.name}
             </Chip>);
@@ -53,10 +53,10 @@ const PotClaimWidget = React.createClass({
     styles: {
         chip: {
             margin: 4,
-            float: "left"
+            float: 'left'
         },
         wrapper: {
-            display: "flex"
+            display: 'flex'
         }
     },
 
@@ -70,23 +70,24 @@ const PotClaimWidget = React.createClass({
 
     onSubmit: function(name) {
         jQuery.ajax({
-            method: "POST",
-            url: "/claimPot",
-            data: JSON.stringify({"potMaker": name}),
-            contentType: "application/json"
+            method: 'POST',
+            url: '/claimPot',
+            data: JSON.stringify({'potMaker': name}),
+            contentType: 'application/json'
         }).done(function(msg) {
             this.props.setSubmitMessage(msg.submitMessage);
         }.bind(this));
         jQuery.ajax({
-            method: "GET",
-            url: "/potMakers"
+            method: 'GET',
+            url: '/potMakers'
         }).done(function( msg ) {
             this.props.setPotMakers(msg.potMakers);
         }.bind(this));
     },
 
     renderForm: function() {
-        return(
+        let element = null;
+        element = (
             <div className="scrollable-float-action">
                 <FloatingActionButton onTouchTap={this.handleOpen}>
                 <ContentAdd />
@@ -100,22 +101,19 @@ const PotClaimWidget = React.createClass({
                     {this.getMakerchips()}
                     </Dialog>
 
-                    <Snackbar
-                        open={this.state.snackbaropen}
-                        message={this.props.submitMessage}
-                        autoHideDuration={4000}
-                        onRequestClose={this.handleCloseSnackBar}
-                    />
                 </div>
             </div>
         );
-    },
-
-    renderServerReply: function() {
-        setTimeout(this.props.hideSubmitMessage, 5000);
-        return(
-            <div> {this.props.submitMessage} </div>
-        );
+        let reply = null;
+        if (this.props.submitMessage) {
+            reply = ( <Snackbar
+                open={this.state.snackbaropen}
+                message={this.props.submitMessage}
+                autoHideDuration={4000}
+                onRequestClose={this.handleCloseSnackBar}
+            />);
+        }
+        return (<div> {element} {reply} </div>);
     },
 
     render: function() {

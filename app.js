@@ -46,7 +46,7 @@ const fetchNumberOfNewPots = () => {
 };
 
 fetchNumberOfNewPots();
-this.setInterval(fetchNumberOfNewPots, 60000);
+window.setInterval(fetchNumberOfNewPots, 60000);
 
 const fetchTeapotStatus = () => {
     jQuery.ajax({
@@ -58,7 +58,7 @@ const fetchTeapotStatus = () => {
 };
 
 fetchTeapotStatus();
-this.setInterval(fetchTeapotStatus, 30000);
+window.setInterval(fetchTeapotStatus, 30000);
 
 
 const fetchPotMakers = () => {
@@ -70,7 +70,7 @@ const fetchPotMakers = () => {
     });
 };
 fetchPotMakers();
-this.setInterval(fetchTeapotStatus, 30000);
+window.setInterval(fetchTeapotStatus, 30000);
 
 const fetchTeapotAge = () => {
     jQuery.ajax({
@@ -82,4 +82,4 @@ const fetchTeapotAge = () => {
 };
 
 fetchTeapotAge();
-this.setInterval(fetchTeapotAge, 30000);
+window.setInterval(fetchTeapotAge, 30000);

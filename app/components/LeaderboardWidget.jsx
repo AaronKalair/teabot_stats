@@ -1,6 +1,6 @@
-import React, { PropTypes } from "react";
-import {Table, TableBody, TableHeaderColumn, TableRow, TableRowColumn} from "material-ui/Table";
-import {Card, CardHeader } from "material-ui/Card";
+import React, { PropTypes } from 'react';
+import {Table, TableBody, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
+import {Card, CardHeader } from 'material-ui/Card';
 
 const LeaderboardWidget = ({ potMakers }) => (
     <div className="large-card" >
@@ -8,7 +8,7 @@ const LeaderboardWidget = ({ potMakers }) => (
             <CardHeader
                 title="Leaderboard"
                 avatar="robot.jpg" />
-            <Table style={{"margin-right":"auto", "margin-left": "auto"}}>
+            <Table>
             <TableBody displayRowCheckbox={false} selectable={false}>
               <TableRow selectable={false}>
                 <TableHeaderColumn>Who</TableHeaderColumn>

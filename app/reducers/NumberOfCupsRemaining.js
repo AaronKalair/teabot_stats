@@ -1,4 +1,4 @@
-const StatusOfTeapot = (state = 'Hit me with your best pot', action) => {
+const NumberOfCupsRemaining = (state = 'Hit me with your best pot', action) => {
     switch (action.type) {
         case 'SET_NUMBER_OF_CUPS_REMAINING':
             return action.numberOfCupsRemaining;
@@ -7,4 +7,4 @@ const StatusOfTeapot = (state = 'Hit me with your best pot', action) => {
     }
 };
 
-export default StatusOfTeapot;
+export default NumberOfCupsRemaining;

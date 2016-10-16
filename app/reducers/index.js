@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import NumberOfTeapots  from './NumberOfTeapots';
-import StatusOfTeapot from './StatusOfTeapot';
+import NumberOfCupsRemaining from './NumberOfCupsRemaining';
 import PotMakers from './PotMakers';
 import TeapotAge from './TeapotAge';
 
 const MainReducer = combineReducers({
     numberOfTeapots: NumberOfTeapots,
-    teapotStatus: StatusOfTeapot,
+    numberOfCupsRemaining: NumberOfCupsRemaining,
     teapotAge: TeapotAge,
     potMakers: PotMakers
 });
