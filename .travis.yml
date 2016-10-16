@@ -6,8 +6,6 @@ install:
     - npm install
 
 script:
-    - ls -lah
-    - pwd
     - npm run lint
     - npm test
     - npm run build

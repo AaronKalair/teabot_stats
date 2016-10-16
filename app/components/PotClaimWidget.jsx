@@ -9,27 +9,13 @@ import Snackbar from "material-ui/Snackbar";
 import jQuery from "jquery";
 
 
-interface SubmitMessage {
-    submitMessage: string;
-};
-interface PotMaker {
-    name: string;
-    numberOfPotsMade: number;
-    totalWeightMade: number;
-    numberOfCupsMade: number;
-    largestSinglePot: number;
-};
-interface PotMakerResponse {
-    potMakers: Array<PotMaker>;
-};
-
 const PotClaimWidget = React.createClass({
 
     getInitialState: function() {
         return {};
     },
 
-    handleChange: function(name: string) {
+    handleChange: function(name) {
         this.setState({
             potMaker: name,
             open: false,
@@ -54,7 +40,7 @@ const PotClaimWidget = React.createClass({
 
     getMakerchips: function() {
         // TODO: Type this currentlly errors out
-        const chips: any[] = [];
+        const chips = [];
         for (let maker of this.props.potMakers) {
             chips.push(<Chip style={this.styles.chip}onTouchTap={() => this.handleChange(maker.name)}>
                 <Avatar backgroundColor={indigo900} size={32}>{maker.name.substring(0, 1)}</Avatar>
@@ -82,19 +68,19 @@ const PotClaimWidget = React.createClass({
         setPotMakers: PropTypes.func.isRequired
     },
 
-    onSubmit: function(name: string) {
+    onSubmit: function(name) {
         jQuery.ajax({
             method: "POST",
             url: "/claimPot",
             data: JSON.stringify({"potMaker": name}),
             contentType: "application/json"
-        }).done(function(msg: SubmitMessage) {
+        }).done(function(msg) {
             this.props.setSubmitMessage(msg.submitMessage);
         }.bind(this));
         jQuery.ajax({
             method: "GET",
             url: "/potMakers"
-        }).done(function( msg: PotMakerResponse ) {
+        }).done(function( msg ) {
             this.props.setPotMakers(msg.potMakers);
         }.bind(this));
     },

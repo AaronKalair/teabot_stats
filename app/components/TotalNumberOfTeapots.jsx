@@ -1,11 +1,7 @@
 import React, { PropTypes } from "react";
 import {Card, CardHeader, CardText} from "material-ui/Card";
 
-interface TotalNumberOfTeapotsProps {
-    numberOfTeapots: number;
-}
-
-const TotalNumberOfTeapots: React.StatelessComponent<TotalNumberOfTeapotsProps> = ({ numberOfTeapots }) => (
+const TotalNumberOfTeapots = ({ numberOfTeapots }) => (
     <div className="card-margin">
         <Card>
             <CardHeader

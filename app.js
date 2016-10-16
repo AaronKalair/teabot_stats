@@ -53,7 +53,7 @@ const fetchTeapotStatus = () => {
         method: 'GET',
         url: '/teabotWebhook'
     }).done(function( msg ) {
-        store.dispatch({type: 'GET_TEAPOT_STATUS', statusOfTeapot: msg.text});
+        store.dispatch({type: 'SET_NUMBER_OF_CUPS_REMAINING', numberOfCupsRemaining: msg.text});
     });
 };
 

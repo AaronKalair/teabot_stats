@@ -2,20 +2,7 @@ import React, { PropTypes } from "react";
 import {Table, TableBody, TableHeaderColumn, TableRow, TableRowColumn} from "material-ui/Table";
 import {Card, CardHeader } from "material-ui/Card";
 
-interface PotMaker {
-    name: string;
-    numberOfPotsMade: number;
-    totalWeightMade: number;
-    numberOfCupsMade: number;
-    largestSinglePot: number;
-};
-
-interface LeaderboardWidgetProps {
-    potMakers: Array<PotMaker>;
-};
-
-
-const LeaderboardWidget: React.StatelessComponent<LeaderboardWidgetProps> = ({ potMakers }) => (
+const LeaderboardWidget = ({ potMakers }) => (
     <div className="large-card" >
         <Card>
             <CardHeader
