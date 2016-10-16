@@ -1,21 +1,21 @@
 import React, { PropTypes } from "react";
 import {Card,  CardHeader, CardText} from "material-ui/Card";
 
-const TeapotStatusWidget = ({ teapotStatus }) => (
+const NumberOfCupsRemainingWidget = ({ numberOfCupsRemaining }) => (
     <div className="card-margin" >
         <Card>
             <CardHeader
                 title="Number of Cups in Teapot"
                 avatar="robot.jpg" />
             <CardText>
-                {teapotStatus}
+                {numberOfCupsRemaining}
             </CardText>
       </Card>
     </div>
 );
 
-TeapotStatusWidget.propTypes = {
-    teapotStatus: PropTypes.string.isRequired
+NumberOfCupsRemainingWidget.propTypes = {
+    numberOfCupsRemaining: PropTypes.string.isRequired
 };
 
-export default TeapotStatusWidget;
+export default NumberOfCupsRemainingWidget;

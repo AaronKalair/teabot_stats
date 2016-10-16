@@ -1,7 +1,7 @@
 const StatusOfTeapot = (state = 'Hit me with your best pot', action) => {
     switch (action.type) {
-        case 'GET_TEAPOT_STATUS':
-            return action.statusOfTeapot;
+        case 'SET_NUMBER_OF_CUPS_REMAINING':
+            return action.numberOfCupsRemaining;
         default:
             return state;
     }

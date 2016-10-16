@@ -29,7 +29,6 @@
     "jest": "^16.0.1",
     "react-addons-test-utils": "^15.3.2",
     "react-test-renderer": "^15.3.2",
-    "react-test-utils": "0.0.1",
     "source-map-loader": "^0.1.5"
   },
   "scripts": {
