@@ -6,6 +6,7 @@ import NumberOfCupsRemainingWidgetContainer from '../containers/NumberOfCupsRema
 import PotClaimWidgetContainer from '../containers/PotClaimWidgetContainer';
 import TeapotAgeWidgetContainer from '../containers/TeapotAgeWidgetContainer';
 import LeaderboardWidgetContainer from '../containers/LeaderboardWidgetContainer';
+import BrewStatusWidgetContainer from '../containers/BrewStatusContainer';
 
 
 const WidgetHolder = () => (
@@ -22,6 +23,7 @@ const WidgetHolder = () => (
         </div>
         <div className="flex-parent">
             <TeapotAgeWidgetContainer />
+            <BrewStatusWidgetContainer />
         </div>
         <LeaderboardWidgetContainer />
         <div>

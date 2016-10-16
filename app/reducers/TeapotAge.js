@@ -1,4 +1,4 @@
-const TeapotAge = (state = 0, action) => {
+const TeapotAge = (state = 100, action) => {
     switch (action.type) {
         case 'SET_TEAPOT_AGE':
             return action.teapotAge;
