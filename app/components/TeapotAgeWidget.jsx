@@ -2,12 +2,7 @@ import React, { PropTypes } from "react";
 import {Card, CardHeader, CardText} from "material-ui/Card";
 
 
-interface TeapotAgeProps {
-    teapotAge: number;
-};
-
-
-const TeapotAge: React.StatelessComponent<TeapotAgeProps> = ({teapotAge}) => (
+const TeapotAge = ({teapotAge}) => (
     <div className="large-card">
         <Card>
             <CardHeader

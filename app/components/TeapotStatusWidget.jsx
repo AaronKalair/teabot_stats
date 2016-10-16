@@ -1,11 +1,7 @@
 import React, { PropTypes } from "react";
 import {Card,  CardHeader, CardText} from "material-ui/Card";
 
-interface TeapotStatusProps {
-    teapotStatus: string;
-};
-
-const TeapotStatusWidget: React.StatelessComponent<TeapotStatusProps> = ({ teapotStatus }) => (
+const TeapotStatusWidget = ({ teapotStatus }) => (
     <div className="card-margin" >
         <Card>
             <CardHeader
