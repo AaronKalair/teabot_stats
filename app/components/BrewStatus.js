@@ -3,8 +3,8 @@ import {Card, CardHeader, CardText} from 'material-ui/Card';
 import LinearProgress from 'material-ui/LinearProgress';
 
 const BrewStatus = ({teapotAge}) => (
-    <div className="large-card">
-        <Card>
+    <div className="card-margin">
+        <Card className="card-size">
             <CardHeader
                 title="Brew Status"
                 avatar="robot.jpg" />
