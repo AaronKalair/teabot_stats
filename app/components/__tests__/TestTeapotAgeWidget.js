@@ -7,7 +7,7 @@ it('renders correctly', () => {
     const comp = ReactTestUtils.renderIntoDocument(
         <MuiThemeProvider><TeapotAge teapotAge={20.451} /></MuiThemeProvider>
     );
-    const element = ReactTestUtils.findRenderedDOMComponentWithClass(comp, 'large-card');
+    const element = ReactTestUtils.findRenderedDOMComponentWithClass(comp, 'card-margin');
     expect(element.textContent).toContain('20');
     expect(element.textContent).toContain('Age of Teapot');
 });
