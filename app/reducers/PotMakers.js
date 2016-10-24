@@ -3,9 +3,9 @@ const defaultState = {
         {
             'name': 'Aaron',
             'numberOfPotsMade': 7,
-            'totalWeightMade': 89,
+            'totalWeightMade': 2030401,
             'numberOfCupsMade': 23,
-            'largestSinglePot': 98
+            'largestSinglePot': 3000
         }
     ]
 };

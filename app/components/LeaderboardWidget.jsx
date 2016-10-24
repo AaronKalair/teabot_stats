@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import {Table, TableBody, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 import {Card, CardHeader } from 'material-ui/Card';
+import SIUnit from './SIUnit';
 
 const LeaderboardWidget = ({ potMakers }) => (
     <div className="large-card" >
@@ -25,9 +26,13 @@ const LeaderboardWidget = ({ potMakers }) => (
                       return (<TableRow key={maker.name} selectable={false}>
                           <TableRowColumn>{maker.name}</TableRowColumn>
                           <TableRowColumn>{maker.numberOfPotsMade}</TableRowColumn>
-                          <TableRowColumn>{maker.totalWeightMade}</TableRowColumn>
+                          <TableRowColumn>
+                              <SIUnit number={maker.totalWeightMade} unit={"g"} precision={4} />
+                          </TableRowColumn>
                           <TableRowColumn>{maker.numberOfCupsMade}</TableRowColumn>
-                          <TableRowColumn>{maker.largestSinglePot}</TableRowColumn>
+                          <TableRowColumn>
+                              <SIUnit number={maker.largestSinglePot} unit={"g"} precision={4} />
+                          </TableRowColumn>
                       </TableRow>);
                   })
                 }
