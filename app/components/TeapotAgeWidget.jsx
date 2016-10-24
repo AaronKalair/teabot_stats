@@ -3,8 +3,8 @@ import {Card, CardHeader, CardText} from 'material-ui/Card';
 
 
 const TeapotAge = ({teapotAge}) => (
-    <div className="card-margin">
-        <Card className="card-size">
+    <div className="large-card">
+        <Card>
             <CardHeader
                 title="Age of Teapot"
                 avatar="robot.jpg" />

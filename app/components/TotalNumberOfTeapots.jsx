@@ -3,7 +3,7 @@ import {Card, CardHeader, CardText} from 'material-ui/Card';
 
 const TotalNumberOfTeapots = ({ numberOfTeapots }) => (
     <div className="card-margin">
-        <Card className="card-size">
+        <Card>
             <CardHeader
                 title="Number of Teapots"
                 avatar="robot.jpg" />
