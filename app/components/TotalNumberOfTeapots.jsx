@@ -1,17 +1,9 @@
 import React, { PropTypes } from 'react';
-import {Card, CardHeader, CardText} from 'material-ui/Card';
+import { FormattedNumber } from 'react-intl';
+import IconCard from './IconCard';
 
 const TotalNumberOfTeapots = ({ numberOfTeapots }) => (
-    <div className="card-margin">
-        <Card>
-            <CardHeader
-                title="Number of Teapots"
-                avatar="robot.jpg" />
-            <CardText>
-                {numberOfTeapots}
-            </CardText>
-        </Card>
-    </div>
+    <IconCard icon="teapot" title={<FormattedNumber value={numberOfTeapots} />} width="16%" />
 );
 
 TotalNumberOfTeapots.propTypes = {

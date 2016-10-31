@@ -5,34 +5,54 @@
         href="https://fonts.googleapis.com/css?family=Roboto">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
+        <link rel="stylesheet" href="css/teabot.css">
     </head>
     <style>
-        body {
+    body {
         font-family: 'Roboto', serif;
-      }
-
-    .top-card-row {
-        margin-top: 7%;
-        margin-bottom: 2%;
-      }
-
-    .card-margin {
-        margin-right: 1%;
-        margin-left: 1%;
-        width: 50%;
     }
 
-    .large-card {
-        width: 98%;
-        margin-top: 2%;
-        margin-left: 1%;
-    }
-
-
-    .flex-parent {
+    .top-row {
+        margin: 85px 0 15px 0;
         display: flex;
-      }
+    }
+
+    .paper {
+        padding: 25px 10px 0px 30px;
+        margin-right: 1%
+    }
+
+    .paper__icon {
+        float: left;
+    }
+
+    .paper__title {
+        float: left;
+        margin-left: 10px;
+        font-size: 24px;
+        line-height: 42px;
+    }
+
+    .paper__progress-container {
+        float: left;
+    }
+
+    .paper__progress-container > div {
+        top: -15px;
+        left: -55px;
+    }
+
+    .paper__teapot-age {
+        float: left;
+        position: relative;
+        left: -50px;
+        font-size: 24px;
+        line-height: 42px;
+    }
+
+    .paper__table-container {
+        clear: both;
+    }
 
     .scrollable {
         margin: 0;

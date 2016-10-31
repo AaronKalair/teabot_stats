@@ -17,6 +17,7 @@
     "mathjs": "^3.5.3",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-intl": "^2.1.5",
     "react-redux": "^4.4.5",
     "react-tap-event-plugin": "^1.0.0",
     "redux": "^3.5.2",
@@ -35,7 +36,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && ./node_modules/jest/bin/jest.js",
     "lint": "./node_modules/eslint/bin/eslint.js -c eslintrc.json app/ app.js",
-    "build": "./node_modules/webpack/bin/webpack.js"
+    "build": "$(npm bin)/webpack",
+    "watch": "$(npm bin)/webpack --watch"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest"

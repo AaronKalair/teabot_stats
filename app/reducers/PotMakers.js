@@ -6,6 +6,13 @@ const defaultState = {
             'totalWeightMade': 2030401,
             'numberOfCupsMade': 23,
             'largestSinglePot': 3000
+        },
+        {
+            'name': 'Cookie',
+            'numberOfPotsMade': 3,
+            'totalWeightMade': 2530401,
+            'numberOfCupsMade': 20,
+            'largestSinglePot': 4000
         }
     ]
 };
