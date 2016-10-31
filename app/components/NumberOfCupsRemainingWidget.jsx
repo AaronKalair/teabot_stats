@@ -1,17 +1,8 @@
 import React, { PropTypes } from 'react';
-import {Card,  CardHeader, CardText} from 'material-ui/Card';
+import IconCard from './IconCard';
 
 const NumberOfCupsRemainingWidget = ({ numberOfCupsRemaining }) => (
-    <div className="card-margin" >
-        <Card>
-            <CardHeader
-                title="Number of Cups in Teapot"
-                avatar="robot.jpg" />
-            <CardText>
-                {numberOfCupsRemaining}
-            </CardText>
-      </Card>
-    </div>
+    <IconCard icon="cup" title={numberOfCupsRemaining} width="32%" />
 );
 
 NumberOfCupsRemainingWidget.propTypes = {

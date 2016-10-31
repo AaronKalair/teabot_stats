@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import { IntlProvider } from 'react-intl';
 import WidgetHolder from './app/components/WidgetHolder';
 import MainReducer from './app/reducers';
 import jQuery from 'jquery';
@@ -31,7 +32,9 @@ const App = () => (
 );
 
 render(
-    <App/>,
+    <IntlProvider locale="en">
+        <App/>
+    </IntlProvider>,
     document.getElementById('root')
 );
 

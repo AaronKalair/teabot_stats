@@ -1,10 +1,10 @@
 import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
+import TotalWeightOfTeapotsContainer from '../containers/TotalWeightOfTeapotsContainer';
 import TotalNumberOfTeapotsContainer from '../containers/TotalNumberOfTeapotsContainer';
 import NumberOfCupsRemainingWidgetContainer from '../containers/NumberOfCupsRemainingWidgetContainer';
 import PotClaimWidgetContainer from '../containers/PotClaimWidgetContainer';
-import TeapotAgeWidgetContainer from '../containers/TeapotAgeWidgetContainer';
 import LeaderboardWidgetContainer from '../containers/LeaderboardWidgetContainer';
 import BrewStatusWidgetContainer from '../containers/BrewStatusContainer';
 
@@ -14,16 +14,13 @@ const WidgetHolder = () => (
         <div className="scrollable">
             <AppBar
             title="TeaBot"
-            iconElementLeft={<IconButton iconClassName="lalaal" />}
-            iconElementRight={<IconButton iconClassName="muidocs-icon-custom-github" />} />
+            iconElementLeft={<IconButton iconClassName="icon-teapot" iconStyle={{fontSize: '28px', top: '-3px', left: '-1px'}} />} />
         </div>
-        <div className="top-card-row flex-parent">
-            <TotalNumberOfTeapotsContainer />
-            <NumberOfCupsRemainingWidgetContainer />
-        </div>
-        <div className="flex-parent">
-            <TeapotAgeWidgetContainer />
+        <div className="top-row">
             <BrewStatusWidgetContainer />
+            <NumberOfCupsRemainingWidgetContainer />
+            <TotalNumberOfTeapotsContainer />
+            <TotalWeightOfTeapotsContainer />
         </div>
         <LeaderboardWidgetContainer />
         <div>
