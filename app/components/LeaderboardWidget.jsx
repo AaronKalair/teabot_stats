@@ -5,13 +5,21 @@ import FontIcon from 'material-ui/FontIcon';
 import Paper from 'material-ui/Paper';
 import SIUnit from './SIUnit';
 
+const crownIcon = <FontIcon className="icon-crown" style={{marginTop: '6px'}} />;
+const crown = (
+    <Avatar icon={crownIcon}
+        size={20}
+        style={{marginRight: '5px'}}
+        backgroundColor={'#fdd835'} />
+);
+const grave = <span dangerouslySetInnerHTML={{__html: '&#x2020; '}} />;
+
 const LeaderboardWidget = ({ potMakers }) => {
-    const crown = <FontIcon className="icon-crown" style={{marginTop: '6px'}} />;
-    const renderRow = (maker, hasCrown = false) => {
+    const renderRow = (maker, icon) => {
         return (
             <TableRow key={maker.name} selectable={false}>
                 <TableRowColumn>
-                    {hasCrown ? <Avatar icon={crown} size={20} style={{marginRight: '5px'}} backgroundColor={'#fdd835'} /> : null}
+                    {icon}
                     {maker.name}
                 </TableRowColumn>
                 <TableRowColumn>{maker.numberOfPotsMade}</TableRowColumn>
@@ -26,9 +34,15 @@ const LeaderboardWidget = ({ potMakers }) => {
         );
     }
     let filteredMakers = potMakers.filter((maker) => maker.numberOfPotsMade !== 0);
-    const topRow = renderRow(filteredMakers.shift(), true);
-    const tableRows = filteredMakers.map((maker) => {
-        return renderRow(maker);
+    const tableRows = filteredMakers.map((maker, index) => {
+        let icon;
+        if (index === 0) {
+            icon = crown;
+        }
+        else if (maker.inactive) {
+            icon = grave;
+        }
+        return renderRow(maker, icon);
     });
     return (
         <Paper className="paper" style={{width: '99%'}}>
@@ -46,7 +60,6 @@ const LeaderboardWidget = ({ potMakers }) => {
                         <TableHeaderColumn># of Cups</TableHeaderColumn>
                         <TableHeaderColumn>Heaviest Pot</TableHeaderColumn>
                       </TableRow>
-                      {topRow}
                       {tableRows}
                     </TableBody>
                 </Table>

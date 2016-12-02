@@ -13,6 +13,14 @@ const defaultState = {
             'totalWeightMade': 2530401,
             'numberOfCupsMade': 20,
             'largestSinglePot': 4000
+        },
+        {
+            'name': 'Mario',
+            'numberOfPotsMade': 1,
+            'totalWeightMade': 3000,
+            'numberOfCupsMade': 6,
+            'largestSinglePot': 3000,
+            'inactive': true
         }
     ]
 };
