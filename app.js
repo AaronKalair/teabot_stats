@@ -86,3 +86,15 @@ const fetchTeapotAge = () => {
 
 fetchTeapotAge();
 window.setInterval(fetchTeapotAge, 30000);
+
+const fetchNumberOfPotRequests = () => {
+    jQuery.ajax({
+        method: 'GET',
+        url: '/getNumberOfTeapotRequests'
+    }).done(function( msg ) {
+        store.dispatch({type: 'SET_NUMBER_OF_TEAPOT_REQUESTS', numberOfTeapotRequests: msg.teaRequests});
+    });
+};
+
+fetchNumberOfPotRequests();
+window.setInterval(fetchNumberOfPotRequests, 60000);
