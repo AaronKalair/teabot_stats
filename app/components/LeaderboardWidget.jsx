@@ -49,7 +49,7 @@ const LeaderboardWidget = ({ potMakers }) => {
             <div className="paper__icon">
                 <Avatar src="robot.jpg" />
             </div>
-            <div className="paper__title">Leaderboard</div>
+            <div className="paper__title">Tea-derboard</div>
             <div className="paper__table-container">
                 <Table>
                     <TableBody displayRowCheckbox={false} selectable={false}>
