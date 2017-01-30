@@ -45,7 +45,7 @@ const LeaderboardWidget = ({ potMakers }) => {
         return renderRow(maker, icon);
     });
     return (
-        <Paper className="paper" style={{width: '99%'}}>
+        <Paper className="paper" style={{flex: 1}}>
             <div className="paper__icon">
                 <Avatar src="robot.jpg" />
             </div>

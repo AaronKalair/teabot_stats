@@ -8,7 +8,7 @@ const TotalWeightOfTeapots = ({ makers }) => {
                 unit={'g'}
                 precision={3} />
     );
-    return <IconCard icon="balance-scale" title={totalWeight} width="16%" />;
+    return <IconCard icon="balance-scale" title={totalWeight} flex={3} />;
 };
 
 TotalWeightOfTeapots.propTypes = {

@@ -3,7 +3,7 @@ import { FormattedNumber } from 'react-intl';
 import IconCard from './IconCard';
 
 const TotalNumberOfTeapots = ({ numberOfTeapots }) => (
-    <IconCard icon="teapot" title={<FormattedNumber value={numberOfTeapots} />} width="16%" />
+    <IconCard icon="teapot" title={<FormattedNumber value={numberOfTeapots} />} flex={2} />
 );
 
 TotalNumberOfTeapots.propTypes = {

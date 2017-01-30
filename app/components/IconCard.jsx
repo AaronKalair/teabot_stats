@@ -14,11 +14,11 @@ const iconStyles = {
     'teapot': {fontSize: '28px', top: '-3px', left: '-2px'},
 };
 
-const IconCard = ({ icon, title, color, backgroundColor, width, children }) => {
+const IconCard = ({ icon, title, color, backgroundColor, flex, children }) => {
     const paperTitle = title ? <div className="paper__title">{title}</div> : null;
     const fontIcon = <FontIcon className={`icon-${icon}`} style={iconStyles[icon]} />;
     return (
-        <Paper className="paper" style={{width: width}}>
+        <Paper className="paper" style={{flex: flex}}>
             <div className="paper__icon">
                 <Avatar icon={fontIcon} color={color} backgroundColor={backgroundColor} />
             </div>
@@ -33,7 +33,7 @@ IconCard.propTypes = {
     title: PropTypes.any,
     color: PropTypes.string,
     backgroundColor: PropTypes.string,
-    width: PropTypes.string,
+    flex: PropTypes.number,
     children: PropTypes.any
 };
 
