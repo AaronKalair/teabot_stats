@@ -5,7 +5,7 @@ module.exports = {
         extensions: ['.jsx', '.js'],
         modules: ['app', 'node_modules']
     },
-    entry: './app.js',
+    entry: ['babel-polyfill', 'whatwg-fetch', './app.js'],
     output: {
         path: '.',
         filename: 'bundle.js'
