@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactTestUtils from 'react-addons-test-utils';
-import NumberOfCupsRemainingWidget from '../NumberOfCupsRemainingWidget.jsx';
+import NumberOfCupsRemainingWidget from '../NumberOfCupsRemainingWidget';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 it('renders correctly', () => {
-    const comp = ReactTestUtils.renderIntoDocument(
-        <MuiThemeProvider><NumberOfCupsRemainingWidget numberOfCupsRemaining={'5'} /></MuiThemeProvider>
+    const component = ReactTestUtils.renderIntoDocument(
+        <MuiThemeProvider>
+            <NumberOfCupsRemainingWidget numberOfCupsRemaining={'5'} />
+        </MuiThemeProvider>
     );
-    const element = ReactTestUtils.findRenderedDOMComponentWithClass(comp, 'card-margin');
+    const element = ReactTestUtils.findRenderedDOMComponentWithClass(component,
+        'paper__title');
     expect(element.textContent).toContain('5');
-    expect(element.textContent).toContain('Number of Cups in Teapot');
 });
