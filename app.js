@@ -85,3 +85,4 @@ const fetchNumberOfPotRequests = () => {
 
 fetchNumberOfPotRequests();
 window.setInterval(fetchNumberOfPotRequests, 10000);
+export { fetchPotMakers };
