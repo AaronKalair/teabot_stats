@@ -6,7 +6,7 @@ import Chip from 'material-ui/Chip';
 import {indigo900} from 'material-ui/styles/colors';
 import Avatar from 'material-ui/Avatar';
 import Snackbar from 'material-ui/Snackbar';
-import jQuery from 'jquery';
+import { fetchPotMakers } from '../../app';
 
 
 const PotClaimWidget = React.createClass({
@@ -69,20 +69,18 @@ const PotClaimWidget = React.createClass({
     },
 
     onSubmit: function(name) {
-        jQuery.ajax({
+        fetch('/claimPot', {
             method: 'POST',
-            url: '/claimPot',
-            data: JSON.stringify({'potMaker': name}),
-            contentType: 'application/json'
-        }).done(function(msg) {
+            headers: new window.Headers({
+                'Content-Type': 'application/json'
+            }),
+            body: JSON.stringify({'potMaker': name})
+        })
+		.then((response) => response.json())
+        .then((msg) => {
             this.props.setSubmitMessage(msg.submitMessage);
-        }.bind(this));
-        jQuery.ajax({
-            method: 'GET',
-            url: '/potMakers'
-        }).done(function( msg ) {
-            this.props.setPotMakers(msg.potMakers);
-        }.bind(this));
+            fetchPotMakers();
+        });
     },
 
     renderForm: function() {

@@ -5,7 +5,6 @@ import { createStore } from 'redux';
 import { IntlProvider } from 'react-intl';
 import WidgetHolder from './app/components/WidgetHolder';
 import MainReducer from './app/reducers';
-import jQuery from 'jquery';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {blueGrey400} from 'material-ui/styles/colors';
@@ -38,63 +37,52 @@ render(
     document.getElementById('root')
 );
 
+const get = (url) => {
+    return fetch(url, {method: 'GET'}).then((response) => response.json());
+};
 
 const fetchNumberOfNewPots = () => {
-    jQuery.ajax({
-        method: 'GET',
-        url: '/numberOfNewTeapots'
-    }).done(function( msg ) {
-        store.dispatch({type: 'SET_NUMBER_OF_TEAPOTS', numberOfTeapots: msg.numberOfTeapots});
+    get('/numberOfNewTeapots').then(({numberOfTeapots}) => {
+        store.dispatch({type: 'SET_NUMBER_OF_TEAPOTS', numberOfTeapots});
     });
 };
 
 fetchNumberOfNewPots();
-window.setInterval(fetchNumberOfNewPots, 60000);
+window.setInterval(fetchNumberOfNewPots, 10000);
 
 const fetchTeapotStatus = () => {
-    jQuery.ajax({
-        method: 'GET',
-        url: '/teabotWebhook'
-    }).done(function( msg ) {
-        store.dispatch({type: 'SET_NUMBER_OF_CUPS_REMAINING', numberOfCupsRemaining: msg.text});
+    get('/teabotWebhook').then(({text}) => {
+        store.dispatch({type: 'SET_NUMBER_OF_CUPS_REMAINING', numberOfCupsRemaining: text});
     });
 };
 
 fetchTeapotStatus();
-window.setInterval(fetchTeapotStatus, 30000);
-
+window.setInterval(fetchTeapotStatus, 10000);
 
 const fetchPotMakers = () => {
-    jQuery.ajax({
-        method: 'GET',
-        url: '/potMakers'
-    }).done(function( msg ) {
-        store.dispatch({type: 'SET_POT_MAKERS', potMakers: msg.potMakers});
+    get('/potMakers').then(({potMakers}) => {
+        store.dispatch({type: 'SET_POT_MAKERS', potMakers});
     });
 };
+
 fetchPotMakers();
-window.setInterval(fetchTeapotStatus, 30000);
+window.setInterval(fetchTeapotStatus, 10000);
 
 const fetchTeapotAge = () => {
-    jQuery.ajax({
-        method: 'GET',
-        url: '/teapotAge'
-    }).done(function( msg ) {
-        store.dispatch({type: 'SET_TEAPOT_AGE', teapotAge: msg.teapotAge});
+    get('/teapotAge').then(({teapotAge}) => {
+        store.dispatch({type: 'SET_TEAPOT_AGE', teapotAge});
     });
 };
 
 fetchTeapotAge();
-window.setInterval(fetchTeapotAge, 30000);
+window.setInterval(fetchTeapotAge, 10000);
 
 const fetchNumberOfPotRequests = () => {
-    jQuery.ajax({
-        method: 'GET',
-        url: '/getNumberOfTeapotRequests'
-    }).done(function( msg ) {
-        store.dispatch({type: 'SET_NUMBER_OF_TEAPOT_REQUESTS', numberOfTeapotRequests: msg.teaRequests});
+    get('/getNumberOfTeapotRequests').then(({teaRequests}) => {
+        store.dispatch({type: 'SET_NUMBER_OF_TEAPOT_REQUESTS', numberOfTeapotRequests: teaRequests});
     });
 };
 
 fetchNumberOfPotRequests();
-window.setInterval(fetchNumberOfPotRequests, 60000);
+window.setInterval(fetchNumberOfPotRequests, 10000);
+export { fetchPotMakers };

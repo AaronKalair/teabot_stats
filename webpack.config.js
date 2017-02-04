@@ -1,24 +1,23 @@
 module.exports = {
-
     cache: true,
     devtool: 'cheap-source-map',
     resolve: {
-        extensions: ['', '.jsx', '.js'],
-        modulesDirectories: ['app', 'node_modules']
+        extensions: ['.jsx', '.js'],
+        modules: ['app', 'node_modules']
     },
-    entry: './app.js',
+    entry: ['babel-polyfill', 'whatwg-fetch', './app.js'],
     output: {
         path: '.',
         filename: 'bundle.js'
     },
     module: {
-        loaders: [
+        rules: [
             {
-                test: /\.jsx?$/, loader: 'babel-loader',
+                test: /\.jsx?$/,
+                loader: 'babel-loader',
                 exclude: 'node_modules',
-                query: {cacheDirectory: true}
+                options: {cacheDirectory: true}
             }
         ]
-
     }
 };

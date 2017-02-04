@@ -12,7 +12,11 @@ const crown = (
         style={{marginRight: '5px'}}
         backgroundColor={'#fdd835'} />
 );
-const grave = <span dangerouslySetInnerHTML={{__html: '&#x2020; '}} />;
+const graveIcon = <FontIcon className="icon-grave" style={{marginTop: '6px'}} />;
+const grave = <Avatar icon={graveIcon}
+    size={20}
+    style={{marginRight: '5px'}}
+    backgroundColor={'#aaaaaa'} />;
 
 const LeaderboardWidget = ({ potMakers }) => {
     const renderRow = (maker, icon) => {
@@ -45,7 +49,7 @@ const LeaderboardWidget = ({ potMakers }) => {
         return renderRow(maker, icon);
     });
     return (
-        <Paper className="paper" style={{width: '99%'}}>
+        <Paper className="paper" style={{flex: 1}}>
             <div className="paper__icon">
                 <Avatar src="robot.jpg" />
             </div>

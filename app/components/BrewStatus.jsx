@@ -28,12 +28,12 @@ const BrewStatus = ({ teapotAge }) => {
         progressColor = color;
     }
     return (
-        <IconCard icon={icon} backgroundColor={color} width="32%">
+        <IconCard icon={icon} backgroundColor={color} flex={5}>
             <div className="paper__progress-container">
                 <CircularProgress color={progressColor} mode={'determinate'} value={teapotProgress} />
             </div>
-            <div className="paper__teapot-age">
-              {Math.floor(teapotAge)} minutes old
+            <div className="paper__title paper__teapot-age">
+              {Math.floor(teapotAge)} minutes
             </div>
         </IconCard>
     );

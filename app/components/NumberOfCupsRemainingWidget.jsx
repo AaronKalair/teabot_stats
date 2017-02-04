@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import IconCard from './IconCard';
 
 const NumberOfCupsRemainingWidget = ({ numberOfCupsRemaining }) => (
-    <IconCard icon="cup" title={numberOfCupsRemaining} width="32%" />
+    <IconCard icon="cup" title={numberOfCupsRemaining} flex={5} />
 );
 
 NumberOfCupsRemainingWidget.propTypes = {
