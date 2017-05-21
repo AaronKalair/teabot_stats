@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { IntlProvider } from 'react-intl';
+import Pusher from 'pusher-js';
 import WidgetHolder from './app/components/WidgetHolder';
 import MainReducer from './app/reducers';
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -48,7 +49,6 @@ const fetchNumberOfNewPots = () => {
 };
 
 fetchNumberOfNewPots();
-window.setInterval(fetchNumberOfNewPots, 10000);
 
 const fetchTeapotStatus = () => {
     get('/teabotWebhook').then(({text}) => {
@@ -57,7 +57,6 @@ const fetchTeapotStatus = () => {
 };
 
 fetchTeapotStatus();
-window.setInterval(fetchTeapotStatus, 10000);
 
 const fetchPotMakers = () => {
     get('/potMakers').then(({potMakers}) => {
@@ -66,7 +65,6 @@ const fetchPotMakers = () => {
 };
 
 fetchPotMakers();
-window.setInterval(fetchTeapotStatus, 10000);
 
 const fetchTeapotAge = () => {
     get('/teapotAge').then(({teapotAge}) => {
@@ -74,8 +72,13 @@ const fetchTeapotAge = () => {
     });
 };
 
+const incTeapotAge = () => {
+    store.dispatch({type: 'INC_TEAPOT_AGE', minutes: 10 / 60})
+}
+
+window.setInterval(incTeapotAge, 10000)
+
 fetchTeapotAge();
-window.setInterval(fetchTeapotAge, 10000);
 
 const fetchNumberOfPotRequests = () => {
     get('/getNumberOfTeapotRequests').then(({teaRequests}) => {
@@ -84,5 +87,29 @@ const fetchNumberOfPotRequests = () => {
 };
 
 fetchNumberOfPotRequests();
-window.setInterval(fetchNumberOfPotRequests, 10000);
+
+const setupPusher = () => {
+    get('/getPusherAppKey').then(({pusherAppKey}) => {
+        const pusher = new Pusher(pusherAppKey, {cluster: 'eu'});
+
+        pusher.subscribe('dashboard');
+        var channel = pusher.channel('dashboard');
+
+        channel.bind(
+            'refresh',
+            data => {
+                console.log('updating myself')
+                fetchNumberOfNewPots();
+                fetchTeapotStatus();
+                fetchPotMakers();
+                fetchTeapotAge();
+                fetchNumberOfPotRequests();
+            }
+        );
+    });
+
+}
+
+setupPusher();
+
 export { fetchPotMakers };
