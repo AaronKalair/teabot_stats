@@ -15,6 +15,7 @@
     "eslint-plugin-react": "^6.1.2",
     "material-ui": "^0.16.7",
     "mathjs": "^3.5.3",
+    "pusher-js": "^4.1.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-intl": "^2.1.5",
