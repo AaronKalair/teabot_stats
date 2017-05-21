@@ -22,7 +22,7 @@
     "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.5.2",
     "typescript": "^2.0.3",
-    "webpack": "^2.2.0",
+    "webpack": "=2.2.x",
     "whatwg-fetch": "^2.0.2"
   },
   "devDependencies": {
