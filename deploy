@@ -1,8 +1,8 @@
 echo "WEBPACKING"
 webpack
 echo "SCPING"
-scp bundle.js aaron@185.3.94.158:/var/www/html
-scp index.html aaron@185.3.94.158:/var/www/html
-scp robot.jpg aaron@185.3.94.158:/var/www/html
-scp -r css/ aaron@185.3.94.158:/var/www/html/css
-scp -r font/ aaron@185.3.94.158:/var/www/html/font
+scp bundle.js aaron@teabot.co.uk:/var/www/html
+scp index.html aaron@teabot.co.uk:/var/www/html
+scp robot.jpg aaron@teabot.co.uk:/var/www/html
+scp -r css/ aaron@teabot.co.uk:/var/www/html/css
+scp -r font/ aaron@teabot.co.uk:/var/www/html/font

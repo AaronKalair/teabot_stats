@@ -77,12 +77,4 @@ const fetchTeapotAge = () => {
 fetchTeapotAge();
 window.setInterval(fetchTeapotAge, 10000);
 
-const fetchNumberOfPotRequests = () => {
-    get('/getNumberOfTeapotRequests').then(({teaRequests}) => {
-        store.dispatch({type: 'SET_NUMBER_OF_TEAPOT_REQUESTS', numberOfTeapotRequests: teaRequests});
-    });
-};
-
-fetchNumberOfPotRequests();
-window.setInterval(fetchNumberOfPotRequests, 10000);
 export { fetchPotMakers };

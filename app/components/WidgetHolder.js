@@ -7,7 +7,6 @@ import NumberOfCupsRemainingWidgetContainer from '../containers/NumberOfCupsRema
 import PotClaimWidgetContainer from '../containers/PotClaimWidgetContainer';
 import LeaderboardWidgetContainer from '../containers/LeaderboardWidgetContainer';
 import BrewStatusWidgetContainer from '../containers/BrewStatusContainer';
-import NumberOfTeapotRequests from '../containers/NumberOfTeapotRequestsContainer';
 
 
 const WidgetHolder = () => (
@@ -22,7 +21,6 @@ const WidgetHolder = () => (
             <NumberOfCupsRemainingWidgetContainer />
             <TotalNumberOfTeapotsContainer />
             <TotalWeightOfTeapotsContainer />
-            <NumberOfTeapotRequests />
         </div>
         <LeaderboardWidgetContainer />
         <div>
